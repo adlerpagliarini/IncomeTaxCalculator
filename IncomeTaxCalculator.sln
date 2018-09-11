@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{C8450EAC-681D-4F55-BEF7-BD08BC8E5FDB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{A284ED53-307B-4914-80F6-15FD7D7CE3A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{5CF1B1C0-0A49-4DE5-85CD-4BE4B4532370}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8450EAC-681D-4F55-BEF7-BD08BC8E5FDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8450EAC-681D-4F55-BEF7-BD08BC8E5FDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8450EAC-681D-4F55-BEF7-BD08BC8E5FDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8450EAC-681D-4F55-BEF7-BD08BC8E5FDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A284ED53-307B-4914-80F6-15FD7D7CE3A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A284ED53-307B-4914-80F6-15FD7D7CE3A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A284ED53-307B-4914-80F6-15FD7D7CE3A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A284ED53-307B-4914-80F6-15FD7D7CE3A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CF1B1C0-0A49-4DE5-85CD-4BE4B4532370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CF1B1C0-0A49-4DE5-85CD-4BE4B4532370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CF1B1C0-0A49-4DE5-85CD-4BE4B4532370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CF1B1C0-0A49-4DE5-85CD-4BE4B4532370}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {18D7FDFE-3F2D-4CF3-BD26-0234E154AE65}
+	EndGlobalSection
+EndGlobal
