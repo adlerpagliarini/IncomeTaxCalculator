@@ -3,6 +3,7 @@ using Domain.Entities;
 using Domain.Interfaces.ChainResponsibility;
 using Microsoft.Extensions.DependencyInjection;
 using Services.ServicesStrategy;
+using Services.ServicesStrategyAttributesReflection;
 using System;
 
 namespace ConsoleApp
@@ -16,11 +17,13 @@ namespace ConsoleApp
             var provider = services.BuildServiceProvider();
 
             ServicesFactory();
+            ServicesAttributesFactory();
             ServicesChainResponsibility(provider);
 
             Console.ReadKey();
         }
 
+        #region ServicesFactory
         private static void ServicesFactory()
         {
             Console.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -45,7 +48,9 @@ namespace ConsoleApp
             result = incomeTaxCalculatorFactory.GetIncomeTaxCalculator(salary).CalculateIncomeTaxFromSalary(salary);
             ConsoleWrite(result);
         }
+        #endregion
 
+        #region ServicesChainResponsibility
         private static void ServicesChainResponsibility(ServiceProvider provider)
         {
             Console.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
@@ -70,6 +75,36 @@ namespace ConsoleApp
             result = incomeTaxCalculator.CalculateIncomeTaxFromSalary(salary);
             ConsoleWrite(result);
         }
+        #endregion
+
+        #region ServicesAttributesFactory
+        private static void ServicesAttributesFactory()
+        {
+            Console.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+            Console.WriteLine("Switching class calculator with Reflection");
+            Console.WriteLine("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+
+            IncomeTaxFactory incomeTaxCalculatorFactory = new IncomeTaxFactory();
+
+            double salary = 1000; //using if statements to return the right Implementation of this range
+            var result = incomeTaxCalculatorFactory.GetIncomeTaxCalculator(salary).CalculateIncomeTaxFromSalary(salary);
+            ConsoleWrite(result);
+
+            //using reflections to find the right Implementation of this range
+            salary = 2000;
+            result = incomeTaxCalculatorFactory.GetIncomeTaxFactory(salary).CalculateIncomeTaxFromSalary(salary);
+            result = incomeTaxCalculatorFactory.GetIncomeTaxFactory(salary).CalculateIncomeTaxFromSalary(salary);
+            ConsoleWrite(result);
+
+            salary = 3000;
+            result = incomeTaxCalculatorFactory.GetIncomeTaxFactory(salary).CalculateIncomeTaxFromSalary(salary);
+            ConsoleWrite(result);
+
+            salary = 4000;
+            result = incomeTaxCalculatorFactory.GetIncomeTaxFactory(salary).CalculateIncomeTaxFromSalary(salary);
+            ConsoleWrite(result);
+        }
+        #endregion
 
         private static void ConsoleWrite(Discount discount)
         {
